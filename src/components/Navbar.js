@@ -7,23 +7,18 @@ export default function Navbar() {
         <li>
           <a href="/RSVP">R.S.V.P</a>
         </li>
-        <li className="fullscreen">~</li>
         <li>
           <a href="/address-information">Address & Info</a>
         </li>
-        <li className="fullscreen">~</li>
         <li>
           <a href="/music-requests">Music Requests</a>
         </li>
-        <li className="fullscreen">~</li>
         <li>
           <a href="/food-drink">Food & Drink</a>
         </li>
-        <li className="fullscreen">~</li>
         <li>
           <a href="/gallery">Gallery</a>
         </li>
-        <li className="fullscreen">~</li>
         <li>
           <a href="/faq">F.A.Q</a>
         </li>
