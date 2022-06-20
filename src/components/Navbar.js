@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import menu from  "../Images/menu.png"
+
 
 export default function Navbar() {
+
+const [show, setShow] = useState(false)
+
   return (
-    <nav className="nav heading-font">
-      <ul className="list">
+    <nav className="nav">
+      <img src={menu} alt ="menu" className="menu" onClick={() => setShow((s) => !s)}/>
+      <ul className="list" style={{display: show ? "inline" : "none"}}>
         <li>
           <a href="/RSVP">R.S.V.P</a>
         </li>

@@ -1,6 +1,5 @@
 import Heading from "./components/Heading";
-//import Container from "./components/Container";
-import CountdownTimer from "./components/CountdownTimer/CountdownTimer";
+import Home from "./Home";
 
 function App() {
   
@@ -8,8 +7,7 @@ function App() {
   return (
     <>
       <Heading />
-      <CountdownTimer 
-      CountdownTimestampMs = {1666447200000} />
+      <Home />
 
 
 
