@@ -15,17 +15,45 @@ body{
     
 }
 
-h1{
+h1 a{
     display: flex;
     justify-content: center;
     font-family: 'Parisienne', cursive;
-    color: rgb(126, 77, 42);
+    color: rgb(90, 54, 12);
+    text-decoration: none;
 
 }
 
+h2{
+    display: flex;
+    justify-content: center;
+    font-family: 'Parisienne', cursive;
+    color: rgb(90, 54, 12);
+    text-decoration: none;
+    margin: .2rem;
+
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Parisienne', cursive;
+    color: rgb(90, 54, 12);
+    text-decoration: none;
+    margin: .3rem;
+}
+
+p {
+    font-family: 'Parisienne', cursive;
+    color: rgb(46, 25, 1);
+    margin: .5rem;
+    margin-bottom: 1rem;
+}
+
+
 .nav{
-    background: rgba(255, 255, 255, .70);
-    margin: 10px;
+    background: rgba(255, 255, 255, .75);
+    margin: 1rem;
     border-radius: 15px;
 }
 
@@ -68,18 +96,13 @@ h1{
 
 .container{
 
-    background: rgba(255, 255, 255, .50);
+    background: rgba(255, 255, 255, .75);
     border-radius: 15px;
-    margin-top: 1.5rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    margin-bottom: 1rem;
-    text-align: center;
+    margin: 1rem;
+    text-align: left;
     display: flex;
     justify-content: center;
-    
-
-    
+    flex-direction: column;    
 }
 
 .timer{

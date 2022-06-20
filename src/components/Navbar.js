@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import menu from  "../Images/menu.png"
+import { Link } from "react-router-dom"
 
 
 export default function Navbar() {
@@ -11,22 +12,22 @@ const [show, setShow] = useState(false)
       <img src={menu} alt ="menu" className="menu" onClick={() => setShow((s) => !s)}/>
       <ul className="list" style={{display: show ? "inline" : "none"}}>
         <li>
-          <a href="/RSVP">R.S.V.P</a>
+          <Link to="/rsvp" onClick={() => setShow((s) => !s)}>R.S.V.P</Link>
         </li>
         <li>
-          <a href="/address-information">Address & Info</a>
+          <Link to="/info" onClick={() => setShow((s) => !s)}>Address & Info</Link>
         </li>
         <li>
-          <a href="/music-requests">Music Requests</a>
+          <Link to="/music" onClick={() => setShow((s) => !s)}>Music Requests</Link>
         </li>
         <li>
-          <a href="/food-drink">Food & Drink</a>
+          <Link to="/food" onClick={() => setShow((s) => !s)}>Food & Drink</Link>
         </li>
         <li>
-          <a href="/gallery">Gallery</a>
+          <Link to="/gallery" onClick={() => setShow((s) => !s)}>Gallery</Link>
         </li>
         <li>
-          <a href="/faq">F.A.Q</a>
+          <Link to="/questions" onClick={() => setShow((s) => !s)}>F.A.Q</Link>
         </li>
       </ul>
     </nav>
