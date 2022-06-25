@@ -8,7 +8,7 @@ export default function Navbar() {
 const [show, setShow] = useState(false)
 
   return (
-    <nav className="nav">
+    <nav className="nav" style={{background: show ? "rgba(255, 255, 255, .75)" : "none"}}>
       <img src={menu} alt ="menu" className="menu" onClick={() => setShow((s) => !s)}/>
       <ul className="list" style={{display: show ? "inline" : "none"}}>
         <li>
