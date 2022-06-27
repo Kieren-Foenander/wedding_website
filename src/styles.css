@@ -52,6 +52,18 @@ p {
     margin-bottom: 0;
 }
 
+label {
+    
+    font-family: 'Sofia', cursive;
+    font-size: 1.2em;
+    color: rgb(46, 25, 1);
+    margin: .5rem;
+}
+
+li {
+    font-size: 1.2em;
+}
+
 .split {
     display: flex;
     flex-direction: row;
@@ -183,4 +195,12 @@ input[type="submit" i] {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.names{
+    margin: auto;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
