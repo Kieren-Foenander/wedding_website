@@ -1,32 +1,63 @@
-import React, { useState, useEffect } from 'react'
-import { db } from './firebase-config'
-import { collection, getDocs } from 'firebase/firestore'
+/* eslint-disable */
+import React, { useState, useEffect } from "react";
+import { db } from "./firebase-config";
+import { collection, onSnapshot, updateDoc, doc } from "firebase/firestore";
 
 
 export default function Rsvp() {
+  function useGuests() {
+    const [guests, setGuests] = useState([]);
 
-  const [guests, setGuests] = useState([])
+    const guestsCollectionRef = collection(db, "guests");
 
-  useEffect( () => {
-    const guestsCollectionRef = collection(db, "guests")
-    const getGuests = async () => {
-      const data = await getDocs(guestsCollectionRef)
-      setGuests(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-    }
+    useEffect(() => {
+      onSnapshot(guestsCollectionRef, (snapshot) => {
+        const newGuests = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setGuests(newGuests);
+        console.log("running");
+      });
+    }, []);
+    //sort alphabetically
+    guests.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
 
-    getGuests()
-  }, [])
+    return guests;
+  }
+
+  const guests = useGuests();
+
+  const updateRsvp = async (id, rsvp) => {
+    const Guestdocument = doc(db, "guests", id);
+    const updatedRsvp = { rsvp: !rsvp };
+    await updateDoc(Guestdocument, updatedRsvp);
+  };
 
   return (
-    <div>
-      {guests.map((guests) =>{
-        return(
-          <div key={guests.id}> 
-            <h1 >Name: {guests.name}</h1>
-            <h1>RSVP: {guests.rsvp.toString()}</h1>
-          </div>
-        )
-      })}
-    </div>
-  )
+    <>
+      <div className="container">
+        <h2>RSVP</h2>
+      </div>
+      <div className="container">
+        <p>
+          Find your name below and tick next to it to let us know if you will be attending our
+          special day
+        </p>
+        {guests.map((guests) => {
+          return (
+            <div key={guests.id} className="names">
+              <input
+                className="checkmark"
+                type="checkbox"
+                checked={guests.rsvp}
+                onChange={(e) => updateRsvp(guests.id, guests.rsvp)}
+              ></input>
+              <label>{guests.name}</label>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
 }
