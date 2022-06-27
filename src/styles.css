@@ -50,6 +50,8 @@ p {
     color: rgb(46, 25, 1);
     margin: .5rem;
     margin-bottom: 0;
+    font-size: 1em;
+    padding-bottom: .2rem;
 }
 
 label {
@@ -92,9 +94,15 @@ li {
 
 
 input[type="submit" i] {
+    margin-top: .5rem;
+    height: 2.5rem;
     background-color: rgb(180, 123, 57);
     border: none;
     border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Sofia', cursive;
+    opacity: 90%;
+
 }
 
 .nav{
@@ -203,4 +211,34 @@ input[type="submit" i] {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.song-form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    
+    padding: 1rem;
+
+}
+.song-form input{
+    text-align: center;
+    height: 2.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Sofia', cursive;
+    opacity: 80%;
+
+}
+.song-form button{
+    margin-top: .5rem;
+    height: 2.5rem;
+    background-color: rgb(180, 123, 57);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Sofia', cursive;
+    opacity: 90%;
 }
