@@ -20,7 +20,7 @@ export default function Food() {
             <li>Vegetarian</li>
             <li>Supreme</li>
             <li>Pepperoni</li>
-            <li>BBQ Meat Lovers</li>
+            <li>BBQ Meatlovers</li>
           </ul>
           <ul className="child">
             <li>Hawaiian</li>
@@ -78,7 +78,7 @@ export default function Food() {
                     name="Smirnoff-Vodka"
                     value="Smirnoff-Vodka"
                   ></input>
-                  <label>Smirnoff Vodka</label>
+                  <label>Vodka</label>
                 </div>
                 <div>
                   <input
