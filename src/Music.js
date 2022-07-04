@@ -9,9 +9,11 @@ export default function Music() {
   const songsCollectionRef = collection(db, "songs")
 
   const submitSong = async () => {
+    console.log("started")
     await addDoc(songsCollectionRef, {name: song})
+    setSong("")
+    console.log("song added")
   }
-
 
   return (
     <>
@@ -27,12 +29,13 @@ export default function Music() {
         </p>
         <form className="song-form">
           <input
-            type="search"
+            type="text"
             placeholder="Song Name"
             value={song}
-            onChange={e =>{setSong(e.target.value)}}
+            onChange={e =>{setSong(e.target.value)
+            console.log(e.target.value)}}
           ></input>
-          <button type="submit" onClick={submitSong}>Submit Request</button>
+          <button type="button" onClick={submitSong}>Submit Request</button>
         </form>
       </div>
     </>
