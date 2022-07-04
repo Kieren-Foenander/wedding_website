@@ -44,6 +44,15 @@ h3 {
     margin: .3rem;
 }
 
+h4 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Sofia', cursive;
+    color: rgb(90, 54, 12);
+    text-decoration: none;
+    margin: .3rem;
+}
+
 p {
     
     font-family: 'Sofia', cursive;
