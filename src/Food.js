@@ -72,7 +72,7 @@ export default function Food() {
           <form>
             <div className="split">
               <div className="child">
-                <div>
+                <div className="drinks">
                   <input
                     type="checkbox"
                     id="beer"
@@ -84,7 +84,7 @@ export default function Food() {
                   ></input>
                   <label>Beer</label>
                 </div>
-                <div>
+                <div className="drinks">
                   <input
                     type="checkbox"
                     id="White-Wine"
@@ -96,7 +96,7 @@ export default function Food() {
                   ></input>
                   <label>White Wine</label>
                 </div>
-                <div>
+                <div className="drinks">
                   <input
                     type="checkbox"
                     id="Red-Wine"
@@ -110,7 +110,7 @@ export default function Food() {
                 </div>
               </div>
               <div className="child">
-                <div>
+                <div className="drinks">
                   <input
                     type="checkbox"
                     id="Smirnoff-Vodka"
@@ -122,7 +122,7 @@ export default function Food() {
                   ></input>
                   <label>Vodka</label>
                 </div>
-                <div>
+                <div className="drinks">
                   <input
                     type="checkbox"
                     id="Jack-Daniels"
@@ -137,7 +137,7 @@ export default function Food() {
               </div>
             </div>
             <div className="full-child">
-              <input type="button" value="Submit" onClick={submitDrinks}></input>
+              <button type="button" onClick={submitDrinks}>Submit</button>
             </div>
           </form>
         </div>

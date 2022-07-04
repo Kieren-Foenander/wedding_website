@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { db } from "./firebase-config";
 import { collection, onSnapshot, updateDoc, doc } from "firebase/firestore";
 
-
 export default function Rsvp() {
   function useGuests() {
     const [guests, setGuests] = useState([]);
@@ -21,7 +20,7 @@ export default function Rsvp() {
       });
     }, []);
     //sort alphabetically
-    guests.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+    guests.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
 
     return guests;
   }
@@ -41,22 +40,24 @@ export default function Rsvp() {
       </div>
       <div className="container">
         <p>
-          Find your name below and tick next to it to let us know if you will be attending our
-          special day
+          Find your name below and tick next to it to let us know if you will be
+          attending our special day
         </p>
-        {guests.map((guests) => {
-          return (
-            <div key={guests.id} className="names">
-              <input
-                className="checkmark"
-                type="checkbox"
-                checked={guests.rsvp}
-                onChange={(e) => updateRsvp(guests.id, guests.rsvp)}
-              ></input>
-              <label>{guests.name}</label>
-            </div>
-          );
-        })}
+        <div className="guest-list">
+          {guests.map((guests) => {
+            return (
+              <div key={guests.id} className="names">
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  checked={guests.rsvp}
+                  onChange={(e) => updateRsvp(guests.id, guests.rsvp)}
+                ></input>
+                <label>{guests.name}</label>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
