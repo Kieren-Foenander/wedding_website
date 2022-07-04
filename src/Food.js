@@ -1,6 +1,36 @@
-import React from "react";
+import { addDoc, collection } from "firebase/firestore";
+import React, { useState } from "react";
+import { db } from "./firebase-config";
 
 export default function Food() {
+  const [drinks, setDrinks] = useState([])
+
+  const drinksCollectionRef = collection(db, "drinks")
+
+  const submitDrinks = async () =>{
+    console.log("drinks started")
+    await addDoc(drinksCollectionRef, {drinks: drinks})
+    setDrinks([])
+    console.log("drinks added")
+    window.location.reload()
+  }
+
+  function combineDrinks(newDrink, checked){
+    let drinksArr = drinks
+    if(checked === false){
+      for (let i = 0; i< drinksArr.length; i++){
+        if(drinksArr[i] === newDrink){
+          drinksArr.splice(i, 1)
+        }
+      }
+    }else{
+      drinksArr.push(newDrink)  
+    }
+    setDrinks(drinksArr)
+    console.log(drinksArr)
+  }
+
+
   return (
     <div>
       <div className="container">
@@ -48,6 +78,9 @@ export default function Food() {
                     id="beer"
                     name="beer"
                     value="beer"
+                    onChange={(e)=>{
+                      combineDrinks(e.target.value, e.target.checked)
+                    }}
                   ></input>
                   <label>Beer</label>
                 </div>
@@ -57,6 +90,9 @@ export default function Food() {
                     id="White-Wine"
                     name="White-Wine"
                     value="White-Wine"
+                    onChange={(e)=>{
+                      combineDrinks(e.target.value, e.target.checked)
+                    }}
                   ></input>
                   <label>White Wine</label>
                 </div>
@@ -66,6 +102,9 @@ export default function Food() {
                     id="Red-Wine"
                     name="Red-Wine"
                     value="Red-Wine"
+                    onChange={(e)=>{
+                      combineDrinks(e.target.value, e.target.checked)
+                    }}
                   ></input>
                   <label>Red Wine</label>
                 </div>
@@ -77,6 +116,9 @@ export default function Food() {
                     id="Smirnoff-Vodka"
                     name="Smirnoff-Vodka"
                     value="Smirnoff-Vodka"
+                    onChange={(e)=>{
+                      combineDrinks(e.target.value, e.target.checked)
+                    }}
                   ></input>
                   <label>Vodka</label>
                 </div>
@@ -86,13 +128,16 @@ export default function Food() {
                     id="Jack-Daniels"
                     name="Jack-Daniels"
                     value="Jack-Daniels"
+                    onChange={(e)=>{
+                      combineDrinks(e.target.value, e.target.checked)
+                    }}
                   ></input>
                   <label>Jack Daniels</label>
                 </div>
               </div>
             </div>
             <div className="full-child">
-              <input type="submit" value="Submit"></input>
+              <input type="button" value="Submit" onClick={submitDrinks}></input>
             </div>
           </form>
         </div>
