@@ -28,6 +28,7 @@ h1 a{
 h2{
     display: flex;
     justify-content: center;
+    align-items: center;
     font-family: 'Parisienne', cursive;
     color: rgb(90, 54, 12);
     text-decoration: none;
@@ -114,13 +115,13 @@ input[type="submit" i] {
 
 }
 
-.nav{
+nav{
     background: rgba(255, 255, 255, .75);
     margin: 1rem;
     border-radius: 15px;
 }
 
-.nav a {
+nav a {
     color: rgb(90, 54, 12);
     text-decoration: none;
     font-family: 'Parisienne', cursive;
@@ -226,11 +227,9 @@ input[type="submit" i] {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
-    
     padding: 1rem;
-
 }
+
 .song-form input{
     text-align: center;
     height: 2.5rem;
@@ -241,7 +240,7 @@ input[type="submit" i] {
     opacity: 80%;
 
 }
-.song-form button{
+button{
     margin-top: .5rem;
     height: 2.5rem;
     background-color: rgb(180, 123, 57);
@@ -250,4 +249,82 @@ input[type="submit" i] {
     font-size: 1rem;
     font-family: 'Sofia', cursive;
     opacity: 90%;
+}
+button:hover{
+    background-color: rgb(140, 77, 6);
+}
+
+.desktop-navbar{
+    display: none;
+}
+
+
+@media screen and (min-width: 480px) {
+    .container{
+        max-width: 70rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+    }
+
+    .guest-list{
+        
+        text-align: center;
+        display: flex;
+        flex-flow: column wrap;
+        max-height: 90rem;
+    }
+
+    p{
+        margin: 2rem;
+        font-size: large;
+    }
+    .drinks{
+        margin: 1rem;
+    }
+
+    .song-form{
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+    .mobile-nav{
+        display: none;
+    }
+    .desktop-navbar{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    .desktop-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    } 
+    .desktop-list ul{
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+    }
+    .desktop-list li{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .desktop-list a{
+        margin: 0;
+        padding: 0;
+    }
+
+    a:hover{
+        color: rgb(180, 102, 12);
+    }
+
+    .time-container{
+        font-size: 1.5em;
+    }
+
 }
